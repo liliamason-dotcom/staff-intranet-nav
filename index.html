@@ -9,27 +9,33 @@
       font-family: sans-serif;
       background: white;
     }
+
     nav {
       background-color: darkred;
-      overflow: hidden;
+      display: flex;
     }
+
     .dropdown {
-      float: left;
       position: relative;
     }
+
     .dropbtn {
       font-size: 16px;
       color: white;
       padding: 14px 16px;
       cursor: pointer;
     }
+
     .dropdown-content {
       display: none;
       position: absolute;
+      top: 100%;
+      left: 0;
       background-color: darkgreen;
       min-width: 220px;
       z-index: 999;
     }
+
     .dropdown-content a {
       color: white;
       padding: 12px 16px;
@@ -37,9 +43,11 @@
       display: block;
       text-align: left;
     }
+
     .dropdown-content a:hover {
       background-color: #145214;
     }
+
     .dropdown:hover .dropdown-content {
       display: block;
     }
@@ -47,8 +55,6 @@
 </head>
 <body>
   <nav>
-
-    <!-- Our School -->
     <div class="dropdown">
       <div class="dropbtn">Our School</div>
       <div class="dropdown-content">
@@ -62,7 +68,6 @@
       </div>
     </div>
 
-    <!-- Playbook -->
     <div class="dropdown">
       <div class="dropbtn">Playbook</div>
       <div class="dropdown-content">
@@ -79,7 +84,6 @@
       </div>
     </div>
 
-    <!-- Operations -->
     <div class="dropdown">
       <div class="dropbtn">Operations</div>
       <div class="dropdown-content">
@@ -95,7 +99,6 @@
       </div>
     </div>
 
-    <!-- Health & Safety -->
     <div class="dropdown">
       <div class="dropbtn">Health & Safety</div>
       <div class="dropdown-content">
@@ -111,7 +114,6 @@
       </div>
     </div>
 
-    <!-- School Environment -->
     <div class="dropdown">
       <div class="dropbtn">School Environment</div>
       <div class="dropdown-content">
@@ -126,7 +128,6 @@
       </div>
     </div>
 
-    <!-- Student Life -->
     <div class="dropdown">
       <div class="dropbtn">Student Life</div>
       <div class="dropdown-content">
@@ -140,7 +141,6 @@
       </div>
     </div>
 
-    <!-- Partnerships -->
     <div class="dropdown">
       <div class="dropbtn">Partnerships</div>
       <div class="dropdown-content">
@@ -149,7 +149,6 @@
       </div>
     </div>
 
-    <!-- Forms -->
     <div class="dropdown">
       <div class="dropbtn">Forms</div>
       <div class="dropdown-content">
@@ -158,8 +157,8 @@
         <a href="#medform">Medication Form</a>
       </div>
     </div>
-
   </nav>
 </body>
 </html>
+
 
