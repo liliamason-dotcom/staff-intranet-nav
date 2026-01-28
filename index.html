@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Staff Intranet Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: white;
+    }
+    nav {
+      background-color: darkred;
+      overflow: hidden;
+    }
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      position: relative;
+    }
+    .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: darkgreen;
+      min-width: 200px;
+      z-index: 999;
+    }
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+    .dropdown-content a:hover {
+      background-color: #145214;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="dropdown">
+      <button class="dropbtn">Our School</button>
+      <div class="dropdown-content">
+        <a href="https://docs.google.com/document/d/YOUR-DOC-ID/edit#bookmark=id.history">History and Mission</a>
+        <a href="https://docs.google.com/document/d/YOUR-DOC-ID/edit#bookmark=id.vision">Vision and Values</a>
+        <!-- Add the rest of your links here -->
+      </div>
+    </div>
+    <!-- Repeat for Playbook, Operations, etc. -->
+  </nav>
+</body>
+</html>
