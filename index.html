@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Staff Intranet Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
@@ -13,6 +14,7 @@
     nav {
       background-color: darkred;
       display: flex;
+      flex-wrap: wrap;
     }
 
     .dropdown {
@@ -24,6 +26,7 @@
       color: white;
       padding: 14px 16px;
       cursor: pointer;
+      user-select: none;
     }
 
     .dropdown-content {
@@ -48,13 +51,31 @@
       background-color: #145214;
     }
 
-    .dropdown:hover .dropdown-content {
+    @media (hover: hover) {
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    }
+
+    .dropdown.open .dropdown-content {
       display: block;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+      }
+      .dropbtn {
+        padding: 12px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+      }
     }
   </style>
 </head>
 <body>
   <nav>
+
+    <!-- Our School -->
     <div class="dropdown">
       <div class="dropbtn">Our School</div>
       <div class="dropdown-content">
@@ -68,6 +89,7 @@
       </div>
     </div>
 
+    <!-- Playbook -->
     <div class="dropdown">
       <div class="dropbtn">Playbook</div>
       <div class="dropdown-content">
@@ -84,6 +106,7 @@
       </div>
     </div>
 
+    <!-- Operations -->
     <div class="dropdown">
       <div class="dropbtn">Operations</div>
       <div class="dropdown-content">
@@ -99,6 +122,7 @@
       </div>
     </div>
 
+    <!-- Health & Safety -->
     <div class="dropdown">
       <div class="dropbtn">Health & Safety</div>
       <div class="dropdown-content">
@@ -114,6 +138,7 @@
       </div>
     </div>
 
+    <!-- School Environment -->
     <div class="dropdown">
       <div class="dropbtn">School Environment</div>
       <div class="dropdown-content">
@@ -128,6 +153,7 @@
       </div>
     </div>
 
+    <!-- Student Life -->
     <div class="dropdown">
       <div class="dropbtn">Student Life</div>
       <div class="dropdown-content">
@@ -141,6 +167,7 @@
       </div>
     </div>
 
+    <!-- Partnerships -->
     <div class="dropdown">
       <div class="dropbtn">Partnerships</div>
       <div class="dropdown-content">
@@ -149,6 +176,7 @@
       </div>
     </div>
 
+    <!-- Forms -->
     <div class="dropdown">
       <div class="dropbtn">Forms</div>
       <div class="dropdown-content">
@@ -157,8 +185,33 @@
         <a href="#medform">Medication Form</a>
       </div>
     </div>
+
   </nav>
+
+  <script>
+    // Mobile dropdown toggle
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(drop => {
+      drop.addEventListener('click', function(e) {
+        // Close other open dropdowns
+        dropdowns.forEach(d => {
+          if (d !== drop) d.classList.remove('open');
+        });
+        // Toggle this one
+        drop.classList.toggle('open');
+        // Prevent link click-through
+        e.stopPropagation();
+      });
+    });
+
+    // Close all on outside click
+    document.addEventListener('click', function() {
+      dropdowns.forEach(d => d.classList.remove('open'));
+    });
+  </script>
 </body>
 </html>
+
 
 
